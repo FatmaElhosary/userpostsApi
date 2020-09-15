@@ -39,3 +39,13 @@ module.exports.postValidation = [
     /^[a-zA-Z0-9\ \']+$/
   ),
 ]; 
+ module.exports.validateResetPassword=[
+  check("confirmPassword", "invalid confirmPassword").custom(
+    (value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error("Password confirmation does not match password");
+      }
+      return true;
+    }
+  ),
+ ];

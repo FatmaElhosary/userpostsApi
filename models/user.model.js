@@ -7,6 +7,7 @@ firstName:{type:String,required:[true,'firstName is required']},
 lastName:{type:String,required:[true,'lasttName is required']},
 email:{type:String,required:true},
 password:{type:String,required:true},
+confirmed:{type:Boolean,default:false},
 posts:[{
     _id:mongoose.Schema.Types.ObjectId,
     title:String,
